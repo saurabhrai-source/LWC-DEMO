@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class MeetingRooms extends LightningElement {
 
@@ -12,4 +12,16 @@ export default class MeetingRooms extends LightningElement {
         {roomName:'A-07', roomCapacity:'34'},
         {roomName:'A-08', roomCapacity:'34'}
     ]
+
+    @track selectedRoom = '';
+
+    constructor(){
+        super();
+
+        this.template.addEventListener('tileclicked', this.tileClickedHandler.bind(this));
+    }
+
+    tileClickedHandler(event){
+        this.selectedRoom = event.detail.roomName;
+    }
 }

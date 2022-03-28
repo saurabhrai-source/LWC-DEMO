@@ -1,6 +1,6 @@
 <template>
     <template if:true={showRoomInfo}>
-        <div class="slds-p-around_medium lgc-bg">
+        <div class="slds-p-around_medium lgc-bg" onclick={titleClickHandler}>
             <slot name="roomInfo"></slot>
             <slot name="additionalSlot"></slot>
             <slot></slot>

@@ -1,9 +1,10 @@
 <template>
    <lightning-card title="Meeting Rooms">
+       <div>Room Selected : {selectedRoom}</div>
         <ul>
             <template for:each={meetingRooomsInfo} for:item="room">
                 <li key={room.roomName} style="padding: 10px;">
-                    <c-meeting-room  show-room-info>
+                    <c-meeting-room meeting-room-info={room}  show-room-info>
                         <lightning-tile label={room.roomName} slot="roomInfo">
                             <p class="slds-truncate" title={room.roomName}>Room Capacity : {room.roomCapacity}</p>
                         </lightning-tile>
